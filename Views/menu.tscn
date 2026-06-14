@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c5uu3jnki0qyq"]
+
+[ext_resource type="PackedScene" uid="uid://8j7mi5ykpjpp" path="res://Components/divider.tscn" id="1_1kft6"]
+[ext_resource type="Script" uid="uid://dcp480hbog808" path="res://Views/menu.gd" id="1_vwhen"]
+
+[node name="Menu" type="VBoxContainer" unique_id=721021602]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+script = ExtResource("1_vwhen")
+
+[node name="SelectRomSav" type="VBoxContainer" parent="." unique_id=1525785703]
+layout_mode = 2
+
+[node name="BtnSelectRom" type="Button" parent="SelectRomSav" unique_id=1871831283]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "SELECT ROM"
+autowrap_mode = 3
+clip_text = true
+
+[node name="BtnSelectSav" type="Button" parent="SelectRomSav" unique_id=1179791353]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "SELECT SAV"
+autowrap_mode = 3
+clip_text = true
+
+[node name="BtnLoad" type="Button" parent="SelectRomSav" unique_id=1797317094]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "LOAD SAVE"
+autowrap_mode = 3
+clip_text = true
+
+[node name="Divider" parent="." unique_id=1071070289 instance=ExtResource("1_1kft6")]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=722344697]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TrainerList" type="VBoxContainer" parent="ScrollContainer" unique_id=285588519]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="FD_Rom" type="FileDialog" parent="." unique_id=930510461]
+sdf_oversize = 3
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+size = Vector2i(641, 360)
+file_mode = 0
+access = 2
+use_native_dialog = true
+
+[node name="FD_Sav" type="FileDialog" parent="." unique_id=1125497504]
+sdf_oversize = 3
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+size = Vector2i(641, 360)
+file_mode = 0
+access = 2
+use_native_dialog = true
+
+[connection signal="pressed" from="SelectRomSav/BtnSelectRom" to="." method="_on_btn_select_rom_pressed"]
+[connection signal="pressed" from="SelectRomSav/BtnSelectSav" to="." method="_on_btn_select_sav_pressed"]
+[connection signal="pressed" from="SelectRomSav/BtnLoad" to="." method="_on_btn_load_pressed"]
+[connection signal="file_selected" from="FD_Rom" to="." method="_on_fd_rom_file_selected"]
+[connection signal="file_selected" from="FD_Sav" to="." method="_on_fd_sav_file_selected"]

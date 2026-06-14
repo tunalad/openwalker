@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://k4a7ysrn1nbm"]
+
+[ext_resource type="Script" uid="uid://cpljs0w0olkoc" path="res://Components/btn_trainer.gd" id="1_5gswp"]
+
+[node name="BtnTrainer001" type="TextureButton" unique_id=1249617132]
+custom_minimum_size = Vector2(0, 120)
+offset_right = 400.0
+offset_bottom = 120.0
+size_flags_horizontal = 3
+script = ExtResource("1_5gswp")
+
+[node name="Background" type="ColorRect" parent="." unique_id=86865162]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8235294)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=535617677]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1458586903]
+layout_mode = 2
+
+[node name="GameVerColor" type="ColorRect" parent="MarginContainer/VBoxContainer" unique_id=1670636731]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
+[node name="L_GameVerName" type="RichTextLabel" parent="MarginContainer/VBoxContainer/GameVerColor" unique_id=1741601782]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "  [color=black][b]YELLOW[/b]"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1118971326]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=276302032]
+layout_mode = 2
+
+[node name="L_TNameID" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1265673977]
+layout_mode = 2
+text = "TRAINER: NAME
+IDNo. 123123"
+
+[node name="L_Watts" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1911738535]
+layout_mode = 2
+text = "WATT: 1234"

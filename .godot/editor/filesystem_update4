@@ -1,0 +1,5 @@
+res://Views/menu.tscn
+res://Views/walk_screen.gd
+res://Views/summary.tscn
+res://Views/summary.gd
+res://Gen1/helpers.gd

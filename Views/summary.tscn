@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://clf8k88c6nsrv"]
+
+[ext_resource type="Script" uid="uid://dx3rcyxo4gllv" path="res://Views/summary.gd" id="1_jpccr"]
+
+[node name="Summary" type="VBoxContainer" unique_id=754458734]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jpccr")
+
+[node name="Label" type="Label" parent="." unique_id=307031024]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "walked <> steps
+collected <>W
+total steps taken:<>
+total watts earned: <>
+
+found items: <>
+caught: <>
+
+<> earned <> exp
+<> was placed in <box> <slot>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnHome" type="Button" parent="." unique_id=1479840598]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "BYE!"
+
+[connection signal="pressed" from="BtnHome" to="." method="_on_btn_home_pressed"]

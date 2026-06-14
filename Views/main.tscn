@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bqco33v0m68ah"]
+
+[ext_resource type="Script" uid="uid://c212hab2ujkw7" path="res://Views/main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c5uu3jnki0qyq" path="res://Views/menu.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cxm26rwmhnt8i" path="res://Views/walk_menu.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dds61uvlw6uef" path="res://Views/walk_screen.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://clf8k88c6nsrv" path="res://Views/summary.tscn" id="5_lquwl"]
+
+[sub_resource type="Theme" id="Theme_h2yge"]
+
+[node name="Main" type="Control" unique_id=175639644]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_h2yge")
+script = ExtResource("1_ig7tw")
+
+[node name="Black" type="ColorRect" parent="." unique_id=1865295182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=282554565]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.45
+
+[node name="Bg" type="ColorRect" parent="AspectRatioContainer" unique_id=1866967233]
+layout_mode = 2
+color = Color(0.14420623, 0.17047802, 0.6118586, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer" unique_id=631141823]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Menu" parent="AspectRatioContainer/MarginContainer" unique_id=721021602 instance=ExtResource("2_0xm2m")]
+visible = false
+layout_mode = 2
+
+[node name="WalkMenu" parent="AspectRatioContainer/MarginContainer" unique_id=63096286 instance=ExtResource("3_h2yge")]
+visible = false
+layout_mode = 2
+
+[node name="WalkScreen" parent="AspectRatioContainer/MarginContainer" unique_id=401520637 instance=ExtResource("4_1bvp3")]
+visible = false
+layout_mode = 2
+
+[node name="Summary" parent="AspectRatioContainer/MarginContainer" unique_id=754458734 instance=ExtResource("5_lquwl")]
+layout_mode = 2
+
+[connection signal="resized" from="." to="." method="_on_resized"]

@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dds61uvlw6uef"]
+
+[ext_resource type="Script" uid="uid://hsr12ghm3gsh" path="res://Views/walk_screen.gd" id="1_fwwk0"]
+[ext_resource type="PackedScene" uid="uid://b74lrsuvdqnlp" path="res://Components/trainer_bar.tscn" id="2_7y21i"]
+[ext_resource type="PackedScene" uid="uid://8j7mi5ykpjpp" path="res://Components/divider.tscn" id="2_kbf0p"]
+
+[node name="WalkScreen" type="VBoxContainer" unique_id=401520637]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_fwwk0")
+
+[node name="TrainerBar" parent="." unique_id=1173214404 instance=ExtResource("2_7y21i")]
+layout_mode = 2
+
+[node name="Pedometer" type="VBoxContainer" parent="." unique_id=601973751]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Heading" type="HBoxContainer" parent="Pedometer" unique_id=565963125]
+layout_mode = 2
+alignment = 1
+
+[node name="L_Route" type="Label" parent="Pedometer/Heading" unique_id=1862167706]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "ROUTE"
+
+[node name="L_Mon" type="Label" parent="Pedometer/Heading" unique_id=873075791]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "NICKNAME"
+
+[node name="Info" type="HBoxContainer" parent="Pedometer" unique_id=395217149]
+layout_mode = 2
+alignment = 1
+
+[node name="IconsMons" type="HBoxContainer" parent="Pedometer/Info" unique_id=504987610]
+layout_mode = 2
+
+[node name="IconsItems" type="HBoxContainer" parent="Pedometer/Info" unique_id=1943731620]
+layout_mode = 2
+
+[node name="L_Steps" type="Label" parent="Pedometer/Info" unique_id=1448204507]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "1234"
+
+[node name="BtnStep++" type="Button" parent="Pedometer" unique_id=1953370872]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "step++"
+
+[node name="Divider" parent="." unique_id=1071070289 instance=ExtResource("2_kbf0p")]
+layout_mode = 2
+
+[node name="WalkerMenu" type="VBoxContainer" parent="." unique_id=46151152]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="L_Watts" type="Label" parent="WalkerMenu" unique_id=2050312043]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "W"
+horizontal_alignment = 2
+
+[node name="L_WalkerMenu" type="Label" parent="WalkerMenu" unique_id=1166801769]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "walker menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnReturn" type="Button" parent="." unique_id=607412438]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "RETURN FROM STROLL"
+
+[connection signal="pressed" from="Pedometer/BtnStep++" to="." method="_on_btn_step_pressed"]
+[connection signal="pressed" from="BtnReturn" to="." method="_on_btn_return_pressed"]

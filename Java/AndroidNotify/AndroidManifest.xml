@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.godotengine.plugin.androidnotify">
+
+    <uses-sdk android:minSdkVersion="26" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application>
+        <meta-data
+            android:name="org.godotengine.plugin.v2.AndroidNotify"
+            android:value="org.godotengine.plugin.androidnotify.AndroidNotify" />
+    </application>
+</manifest>

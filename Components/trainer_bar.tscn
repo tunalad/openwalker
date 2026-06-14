@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b74lrsuvdqnlp"]
+
+[ext_resource type="Script" uid="uid://bktlodko6owwl" path="res://Components/trainer_bar.gd" id="1_o4uwf"]
+
+[node name="TrainerBar" type="MarginContainer" unique_id=1173214404]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_o4uwf")
+
+[node name="TrainerVerColor" type="ColorRect" parent="." unique_id=878695804]
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
+[node name="TrainerData" type="MarginContainer" parent="." unique_id=799051850]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TrainerData" unique_id=1350058745]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="L_Name" type="Label" parent="TrainerData/VBoxContainer" unique_id=861633213]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "NAME"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="L_TID" type="Label" parent="TrainerData/VBoxContainer" unique_id=1744603403]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "TID"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://cxm26rwmhnt8i"]
+
+[ext_resource type="Script" uid="uid://dpfcsprfy1oc8" path="res://Views/walk_menu.gd" id="1_i8aa8"]
+[ext_resource type="Texture2D" uid="uid://lmnoa86y3npo" path="res://icon.svg" id="2_kflad"]
+[ext_resource type="PackedScene" uid="uid://b74lrsuvdqnlp" path="res://Components/trainer_bar.tscn" id="2_ub6ik"]
+[ext_resource type="PackedScene" uid="uid://8j7mi5ykpjpp" path="res://Components/divider.tscn" id="2_vor3q"]
+[ext_resource type="PackedScene" uid="uid://dm8fvh0u70h3q" path="res://Components/btn_box_cell.tscn" id="4_pp1pi"]
+
+[sub_resource type="Gradient" id="Gradient_o5f18"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1aql2"]
+gradient = SubResource("Gradient_o5f18")
+
+[sub_resource type="Gradient" id="Gradient_dgus3"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.07058824, 0.5058824, 0.96862745, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pw1mm"]
+gradient = SubResource("Gradient_dgus3")
+
+[node name="WalkMenu" type="VBoxContainer" unique_id=63096286]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i8aa8")
+
+[node name="TrainerBar" parent="." unique_id=1173214404 instance=ExtResource("2_ub6ik")]
+layout_mode = 2
+
+[node name="Divider" parent="." unique_id=1071070289 instance=ExtResource("2_vor3q")]
+layout_mode = 2
+
+[node name="MonInfo" type="MarginContainer" parent="." unique_id=1120108481]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MonInfo" unique_id=1050282353]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MonInfo/VBoxContainer" unique_id=193274767]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="MonImage" type="TextureRect" parent="MonInfo/VBoxContainer/HBoxContainer" unique_id=1591421990]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+texture = ExtResource("2_kflad")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MonInfo/VBoxContainer/HBoxContainer" unique_id=1582024752]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MonInfo/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1750572696]
+layout_mode = 2
+
+[node name="L_Nickname" type="Label" parent="MonInfo/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1610090978]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "NICKNAME"
+
+[node name="L_Gender" type="Label" parent="MonInfo/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=301606615]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "♀"
+
+[node name="L_Level" type="Label" parent="MonInfo/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=620945880]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Lv. 9999"
+
+[node name="L_Species" type="Label" parent="MonInfo/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1282287036]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SPECIES"
+
+[node name="L_Item" type="Label" parent="MonInfo/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2096885854]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "HOLDING: _______"
+
+[node name="L_Ribbons" type="Label" parent="MonInfo/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=167862628]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "* * * * * *"
+
+[node name="ExpBar" type="TextureProgressBar" parent="MonInfo/VBoxContainer" unique_id=622990688]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_1aql2")
+texture_progress = SubResource("GradientTexture1D_pw1mm")
+
+[node name="Divider2" parent="." unique_id=1761267399 instance=ExtResource("2_vor3q")]
+layout_mode = 2
+
+[node name="Boxes" type="VBoxContainer" parent="." unique_id=157823521]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BoxesList" type="OptionButton" parent="Boxes" unique_id=1637855219]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+item_count = 1
+popup/item_0/text = "EXAMPLE"
+popup/item_0/id = 0
+
+[node name="InBox" type="GridContainer" parent="Boxes" unique_id=52892656]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+columns = 4
+
+[node name="BtnBoxCell" parent="Boxes/InBox" unique_id=1460783795 instance=ExtResource("4_pp1pi")]
+layout_mode = 2
+
+[node name="Divider3" parent="." unique_id=1415409256 instance=ExtResource("2_vor3q")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1058633829]
+layout_mode = 2
+alignment = 1
+
+[node name="RoutesList" type="OptionButton" parent="VBoxContainer" unique_id=1545689558]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+selected = 0
+item_count = 4
+popup/item_0/text = "ROUTE 1"
+popup/item_0/id = 0
+popup/item_1/text = "ROUTE 2"
+popup/item_1/id = 1
+popup/item_2/text = "ROUTE 3"
+popup/item_2/id = 2
+popup/item_3/text = "ROUTE 4"
+popup/item_3/id = 3
+
+[node name="L_RouteText" type="Label" parent="VBoxContainer" unique_id=566909407]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "A wonderfully refreshing field for a Stroll. You can meet many kinds of Pokémon here. "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Divider4" parent="." unique_id=1345120473 instance=ExtResource("2_vor3q")]
+layout_mode = 2
+
+[node name="BtnStroll" type="Button" parent="." unique_id=846780413]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "STROLL!"
+
+[connection signal="item_selected" from="Boxes/BoxesList" to="." method="_on_boxes_list_item_selected"]
+[connection signal="pressed" from="BtnStroll" to="." method="_on_btn_stroll_pressed"]

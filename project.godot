@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="OpenWalker"
+run/main_scene="uid://bqco33v0m68ah"
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.6", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://dkuim1uduu3cq"
+Android="*uid://b21noaophb8uh"
+
+[display]
+
+window/size/viewport_width=700
+window/size/viewport_height=1515
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AndroidNotify/plugin.cfg", "res://addons/BackgroundKeepAlive/plugin.cfg", "res://addons/UriPermissionPlugin/plugin.cfg")
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

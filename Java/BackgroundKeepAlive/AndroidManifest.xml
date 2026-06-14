@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.godotengine.plugin.backgroundkeepalive">
+
+    <uses-sdk android:minSdkVersion="26" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+    <application>
+        <service
+            android:name="org.godotengine.plugin.backgroundkeepalive.KeepAliveService"
+            android:foregroundServiceType="dataSync"
+            android:stopWithTask="false"
+            android:exported="false" />
+
+        <meta-data
+            android:name="org.godotengine.plugin.v2.BackgroundKeepAlive"
+            android:value="org.godotengine.plugin.backgroundkeepalive.BackgroundKeepAlive" />
+    </application>
+</manifest>
