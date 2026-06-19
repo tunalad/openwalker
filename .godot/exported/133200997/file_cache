@@ -1,9 +1,0 @@
-res://Components/btn_box_cell.tscn::bc849ed40cff40773a2460ee06f29252::1780875452::res://.godot/exported/133200997/export-c63015ba6250511fd5f93a7fb0f8c22c-btn_box_cell.scn
-res://Components/btn_trainer.tscn::dfc5a8e3a6b7a3c5f70973d633f61ae0::1781279748::res://.godot/exported/133200997/export-867d77165fa93727a0870bc4fa37f131-btn_trainer.scn
-res://Components/divider.tscn::779d836ddff5dc104a343adb37e27c7d::1780875150::res://.godot/exported/133200997/export-bc7de81f7a0ed3abfb60987963a78b8a-divider.scn
-res://Components/trainer_bar.tscn::5b571d8aa98278509ace6bd1027ed7f0::1781228299::res://.godot/exported/133200997/export-d4c7677ef26ee5aa9dc2751bec03e2e8-trainer_bar.scn
-res://Views/main.tscn::7434fb021af49570eed89af172368120::1781278516::res://.godot/exported/133200997/export-2fe2f462329e0d3ec2b0618a35a51c49-main.scn
-res://Views/menu.tscn::4a6b7535abefaae3d1f72f10f2d39782::1781385800::res://.godot/exported/133200997/export-47c7996de475daad9d77526a7fe975f5-menu.scn
-res://Views/summary.tscn::bc2bab9850a7bddf1eff3b1191e477ce::1781388345::res://.godot/exported/133200997/export-eeafd2a20901056ac419032b8c17338c-summary.scn
-res://Views/walk_menu.tscn::6c23146d56a98c16e4f59f2d8926213b::1781287121::res://.godot/exported/133200997/export-27d7168cb526fef10c9399cf727b9a3c-walk_menu.scn
-res://Views/walk_screen.tscn::9cac3c2cf8186371d1f9bbdfd5c72c28::1781278516::res://.godot/exported/133200997/export-d0ffe285395dcd897e581453e1e66341-walk_screen.scn
