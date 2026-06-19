@@ -3,8 +3,8 @@ extends VBoxContainer
 @onready var trainer_bar: MarginContainer = $TrainerBar
 
 @onready var l_steps: Label = $Pedometer/Info/L_Steps
-@onready var l_route: Label = $Pedometer/Heading/L_Route
-@onready var l_mon: Label = $Pedometer/Heading/L_Mon
+@onready var l_route: Label = $Pedometer/L_Route
+@onready var l_mon: Label = $Pedometer/L_Mon
 
 @onready var l_watts: Label = $WalkerMenu/L_Watts
 
@@ -27,6 +27,9 @@ func load_trainer(folder: String) -> void:
 	Global.rom = Gen1Helpers.load_bin(Global.trainer_data.get("rom_path", ""))
 	Global.sav = Gen1Helpers.load_bin(Global.trainer_data.get("sav_path", ""))
 	
+	var json_as_text = FileAccess.get_file_as_string(Global.trainers_path + trainer_folder + "/route.json")
+	Global.route_data = JSON.parse_string(json_as_text)
+	
 	display_data()
 	
 	_setup_step_counter()
@@ -41,6 +44,7 @@ func display_data() -> void:
 	l_steps.text = str(steps)
 	l_watts.text = str(Global.trainer_data["watts_left"] + watts_collected)
 	l_mon.text = Global.trainer_data["mon"]["nickname"]
+	l_route.text = Global.route_data.get("name", "")
 	
 	self.visible = true
 

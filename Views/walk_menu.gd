@@ -16,6 +16,9 @@ extends VBoxContainer
 @onready var l_ribbons: Label = $MonInfo/VBoxContainer/HBoxContainer/VBoxContainer/L_Ribbons
 @onready var exp_bar: TextureProgressBar = $MonInfo/VBoxContainer/ExpBar
 
+@onready var routes_list: OptionButton = $VBoxContainer/RoutesList
+@onready var l_route_text: Label = $VBoxContainer/L_RouteText
+
 @onready var btn_stroll: Button = $BtnStroll
 
 @onready var walk_screen: VBoxContainer = $"../WalkScreen"
@@ -27,7 +30,7 @@ var boxes_data: Array[Dictionary]
 var box: Dictionary
 var selected_mon: Dictionary = {}
 var trainer_folder: String
-
+var routes_found: Array
 
 func display_data():
 	trainer_bar.update_bar(
@@ -39,6 +42,7 @@ func display_data():
 	
 	fill_box()
 	fill_mon_grid(0)
+	fill_routes()
 	update_mon_info()
 
 
@@ -123,6 +127,32 @@ func fill_mon_grid(index: int):
 		mon_grid.add_child(cell_btn)
 
 
+func fill_routes() -> void:
+	routes_list.clear()
+	routes_found.clear()
+	
+	var dir: DirAccess = DirAccess.open(Global.routes_path)
+	
+	if !dir:
+		return
+	
+	var routes: Array = dir.get_files()
+	
+	for route in routes:
+		var json_as_text = FileAccess.get_file_as_string(Global.routes_path + route)
+		var json_as_dict = JSON.parse_string(json_as_text)
+		if json_as_dict:
+			routes_found.append(json_as_dict)
+	
+	routes_found.sort_custom(func(a, b): return a.get("position", 0) < b.get("position", 0))
+	
+	for route_dict in routes_found:
+		routes_list.add_item(route_dict["name"])
+	
+	routes_list.selected = 0
+	_on_routes_list_item_selected(routes_list.selected)
+
+
 # -----------------------------------------------------------------------------
 
 
@@ -145,6 +175,16 @@ func _on_btn_stroll_pressed() -> void:
 		return
 	Global.sav = result["sav"]
 	
+	var route_file = FileAccess.open(Global.trainers_path+trainer_folder+"/route.json", FileAccess.WRITE)
+	if route_file:
+		route_file.store_string(JSON.stringify(Global.route_data))
+		route_file.close()
+	
 	walk_screen.load_trainer(Global.trainers_path+trainer_folder)
 	self.visible = false
 	print("switch to walker scren")
+
+
+func _on_routes_list_item_selected(index: int) -> void:
+	l_route_text.text = routes_found[index]["description"]
+	Global.route_data = routes_found[index]

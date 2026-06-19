@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://hsr12ghm3gsh" path="res://Views/walk_screen.gd" id="1_fwwk0"]
 [ext_resource type="PackedScene" uid="uid://b74lrsuvdqnlp" path="res://Components/trainer_bar.tscn" id="2_7y21i"]
 [ext_resource type="PackedScene" uid="uid://8j7mi5ykpjpp" path="res://Components/divider.tscn" id="2_kbf0p"]
+[ext_resource type="Script" uid="uid://kreqmlvryatk" path="res://Views/walker_menu.gd" id="4_358r1"]
 
 [node name="WalkScreen" type="VBoxContainer" unique_id=401520637]
 anchors_preset = 15
@@ -21,19 +22,16 @@ layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Heading" type="HBoxContainer" parent="Pedometer" unique_id=565963125]
-layout_mode = 2
-alignment = 1
-
-[node name="L_Route" type="Label" parent="Pedometer/Heading" unique_id=1862167706]
+[node name="L_Route" type="Label" parent="Pedometer" unique_id=1862167706]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "ROUTE"
 
-[node name="L_Mon" type="Label" parent="Pedometer/Heading" unique_id=873075791]
+[node name="L_Mon" type="Label" parent="Pedometer" unique_id=873075791]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "NICKNAME"
+horizontal_alignment = 1
 
 [node name="Info" type="HBoxContainer" parent="Pedometer" unique_id=395217149]
 layout_mode = 2
@@ -62,6 +60,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
+script = ExtResource("4_358r1")
 
 [node name="L_Watts" type="Label" parent="WalkerMenu" unique_id=2050312043]
 layout_mode = 2
@@ -69,13 +68,30 @@ theme_override_font_sizes/font_size = 30
 text = "W"
 horizontal_alignment = 2
 
-[node name="L_WalkerMenu" type="Label" parent="WalkerMenu" unique_id=1166801769]
+[node name="WalkerActions" type="HBoxContainer" parent="WalkerMenu" unique_id=86062753]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 50
-text = "walker menu"
-horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="BtnRadar" type="Button" parent="WalkerMenu/WalkerActions" unique_id=770037797]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 100
+text = "🧭"
+
+[node name="BtnDowsing" type="Button" parent="WalkerMenu/WalkerActions" unique_id=550763218]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 100
+text = "📺"
+
+[node name="BtnFound" type="Button" parent="WalkerMenu/WalkerActions" unique_id=813759916]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 100
+text = "🎒"
 
 [node name="BtnReturn" type="Button" parent="." unique_id=607412438]
 custom_minimum_size = Vector2(0, 80)
@@ -84,4 +100,7 @@ theme_override_font_sizes/font_size = 30
 text = "RETURN FROM STROLL"
 
 [connection signal="pressed" from="Pedometer/BtnStep++" to="." method="_on_btn_step_pressed"]
+[connection signal="pressed" from="WalkerMenu/WalkerActions/BtnRadar" to="WalkerMenu" method="_on_btn_radar_pressed"]
+[connection signal="pressed" from="WalkerMenu/WalkerActions/BtnDowsing" to="WalkerMenu" method="_on_btn_dowsing_pressed"]
+[connection signal="pressed" from="WalkerMenu/WalkerActions/BtnFound" to="WalkerMenu" method="_on_btn_found_pressed"]
 [connection signal="pressed" from="BtnReturn" to="." method="_on_btn_return_pressed"]

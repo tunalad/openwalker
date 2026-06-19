@@ -138,17 +138,14 @@ alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 selected = 0
-item_count = 4
+item_count = 2
 popup/item_0/text = "ROUTE 1"
 popup/item_0/id = 0
 popup/item_1/text = "ROUTE 2"
 popup/item_1/id = 1
-popup/item_2/text = "ROUTE 3"
-popup/item_2/id = 2
-popup/item_3/text = "ROUTE 4"
-popup/item_3/id = 3
 
 [node name="L_RouteText" type="Label" parent="VBoxContainer" unique_id=566909407]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "A wonderfully refreshing field for a Stroll. You can meet many kinds of Pokémon here. "
@@ -165,4 +162,5 @@ theme_override_font_sizes/font_size = 30
 text = "STROLL!"
 
 [connection signal="item_selected" from="Boxes/BoxesList" to="." method="_on_boxes_list_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/RoutesList" to="." method="_on_routes_list_item_selected"]
 [connection signal="pressed" from="BtnStroll" to="." method="_on_btn_stroll_pressed"]

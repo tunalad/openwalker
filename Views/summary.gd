@@ -19,6 +19,10 @@ func show_summary(trainer_path: String, steps: int, watts: int) -> void:
 		label.text = result["error"]
 		return
 	
+	DirAccess.remove_absolute(trainer_path+"/route.json")
+	
+	var route_name: String = "%s Summary:" % [ Global.route_data["name"] ]
+	
 	var session_steps: String = "Walked %d steps" % [ steps ]
 	var session_watts: String = "Collected %dW" % [ watts ]
 	
@@ -40,7 +44,8 @@ func show_summary(trainer_path: String, steps: int, watts: int) -> void:
 		if Global.trainer_data.has("ylw_mood"):
 			ylw_mood = "\nylw_mood: %d/255" % [ Global.trainer_data["ylw_mood"] ]
 	
-	label.text = "%s\n%s\n\n%s\n%s\n\n%s\n%s\n%s%s" % [
+	label.text = "%s\n\n%s\n%s\n\n%s\n%s\n\n%s\n%s\n%s%s" % [
+		route_name,
 		session_steps, session_watts, 
 		total_steps, total_watts, 
 		xp_earned, placed_at,

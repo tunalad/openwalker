@@ -1,7 +1,10 @@
 extends Node
 
-var trainer_data: Dictionary
 var trainers_path: String = "user://trainers/"
+var trainer_data: Dictionary
+
+var routes_path: String = "res://Routes/"
+var route_data: Dictionary
 
 var rom: PackedByteArray
 var sav: PackedByteArray
@@ -29,7 +32,7 @@ func game_version_color(version: String):
 
 func clear_trainer_session():
 	trainer_data = {}
-	trainers_path = "user://trainers/"
+	route_data = {}
 	
 	rom = []
 	sav = []

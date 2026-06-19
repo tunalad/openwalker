@@ -1,0 +1,40 @@
+{
+	"name": "Route 1",
+	"description": "Route that connects Pallet Town in the south to Viridian City in the north.",
+	"position": 15.0,
+	"cost": 0.0,
+	"advantage": [
+		"FIRE",
+		"GRASS",
+		"WATER",
+		"THUNDER",
+		"NORMAL"
+	],
+	"mons": [
+		{
+			"species": 16,
+			"level": 2.0,
+			"steps": 0.0,
+			"rarity": 0.0,
+			"moves": [
+				"GUST"
+			]
+		},
+		{
+			"species": 19,
+			"level": 2.0,
+			"steps": 0.0,
+			"rarity": 0.0,
+			"moves": [
+				"TACKLE", "TAIL WHIP"
+			]
+		}
+	],
+	"items": [
+		{
+			"name": "Potion",
+			"steps": 0.0,
+			"rarity": 0.0
+		}
+	]
+}

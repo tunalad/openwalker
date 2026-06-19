@@ -1,0 +1,27 @@
+{
+	"name": "Magikarp Field",
+	"description": "There's only Magikarps here... I mean, it's in the name...",
+	"position": 15.0,
+	"cost": 0.0,
+	"advantage": [
+		"NORMAL"
+	],
+	"mons": [
+		{
+			"species": 129,
+			"level": 53.0,
+			"steps": 0.0,
+			"rarity": 0.0,
+			"moves": [
+				"SPLASH"
+			]
+		}
+	],
+	"items": [
+		{
+			"name": "Potion",
+			"steps": 0.0,
+			"rarity": 0.0
+		}
+	]
+}

@@ -1,0 +1,112 @@
+{
+	"name": "Refreshing Field",
+	"description": "A wonderfully refreshing field for a Stroll. You can meet many kinds of species here.",
+	"position": 10.0,
+	"cost": 0.0,
+	"advantage": [
+		"FIRE",
+		"BUG",
+		"FLY"
+	],
+	"mons": [
+		{
+			"species": 19.0,
+			"level": 5.0,
+			"steps": 0.0,
+			"rarity": 0.0,
+			"moves": [
+				"TACKLE",
+				"TAIL WHIP"
+			]
+		},
+		{
+			"species": 16.0,
+			"level": 5.0,
+			"steps": 0.0,
+			"rarity": 0.0,
+			"moves": [
+				"TACKLE",
+				"SAND-ATTACK"
+			]
+		},
+		{
+			"species": 32.0,
+			"level": 5.0,
+			"steps": 500.0,
+			"rarity": 0.0,
+			"moves": [
+				"LEER",
+				"PECK"
+			]
+		},
+		{
+			"species": 29.0,
+			"level": 5.0,
+			"steps": 500.0,
+			"rarity": 0.0,
+			"moves": [
+				"GROWL",
+				"SCRATCH"
+			]
+		},
+		{
+			"species": 84.0,
+			"level": 8.0,
+			"steps": 2000.0,
+			"rarity": 0.0,
+			"moves": [
+				"PECK",
+				"GROWL",
+				"FURY ATTACK"
+			]
+		},
+		{
+			"species": 115.0,
+			"level": 8.0,
+			"steps": 3000.0,
+			"rarity": 3.0,
+			"moves": [
+				"COMET PUNCH",
+				"RAGE",
+				"BITE"
+			]
+		}
+	],
+	"items": [
+		{
+			"name": "Potion",
+			"steps": 0.0,
+			"rarity": 0.0
+		},
+		{
+			"name": "Parlyz Heal",
+			"steps": 500.0,
+			"rarity": 1.0
+		},
+		{
+			"name": "Awakening",
+			"steps": 700.0,
+			"rarity": 1.0
+		},
+		{
+			"name": "Ice Heal",
+			"steps": 900.0,
+			"rarity": 2.0
+		},
+		{
+			"name": "Burn Heal",
+			"steps": 1000.0,
+			"rarity": 2.0
+		},
+		{
+			"name": "Full Heal",
+			"steps": 2000.0,
+			"rarity": 2.0
+		},
+		{
+			"name": "Revive",
+			"steps": 2500.0,
+			"rarity": 2.0
+		}
+	]
+}
