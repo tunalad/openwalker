@@ -27,8 +27,7 @@ func load_trainer(folder: String) -> void:
 	Global.rom = Gen1Helpers.load_bin(Global.trainer_data.get("rom_path", ""))
 	Global.sav = Gen1Helpers.load_bin(Global.trainer_data.get("sav_path", ""))
 	
-	var json_as_text = FileAccess.get_file_as_string(Global.trainers_path + trainer_folder + "/route.json")
-	Global.route_data = JSON.parse_string(json_as_text)
+	Global.route_data = Gen1Helpers.read_json(Global.trainers_path + trainer_folder + "/route.json")
 	
 	display_data()
 	

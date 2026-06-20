@@ -9,10 +9,13 @@
 	"mons": [
 		{
 			"species": 129,
-			"level": 53.0,
+			"level": 52.0,
 			"steps": 0.0,
 			"rarity": 0.0,
 			"moves": [
+				"SPLASH",
+				"SPLASH",
+				"SPLASH",
 				"SPLASH"
 			]
 		}

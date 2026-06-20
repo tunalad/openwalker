@@ -27,6 +27,18 @@ const NAME_TABLE_Y  = 0xE8000
 const CONV_TABLE_Y  = 0x0410B1
 const BASE_STATS    = 0x383DE
 
+const ITEM_NAME_TABLE_BR = 0x00472B
+const ITEM_NAME_TABLE_Y  = 0x0045B7
+const ITEM_NAME_LENGTH   = 13
+const NUM_ITEMS          = 83
+
+const PC_ITEMS         = 0x27E6
+const PC_ITEM_CAPACITY = 50
+
+const MOVE_NAME_TABLE_BR = 0xB0000
+const MOVE_NAME_TABLE_Y  = 0xBC000
+const MOVE_DATA_TABLE    = 0x38000
+
 const TERM    = 0x50
 const SPACE_1 = 0x4E
 const SPACE_2 = 0x4F

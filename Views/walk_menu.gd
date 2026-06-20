@@ -139,8 +139,7 @@ func fill_routes() -> void:
 	var routes: Array = dir.get_files()
 	
 	for route in routes:
-		var json_as_text = FileAccess.get_file_as_string(Global.routes_path + route)
-		var json_as_dict = JSON.parse_string(json_as_text)
+		var json_as_dict = Gen1Helpers.read_json(Global.routes_path + route)
 		if json_as_dict:
 			routes_found.append(json_as_dict)
 	
