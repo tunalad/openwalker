@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b74lrsuvdqnlp" path="res://Components/trainer_bar.tscn" id="2_7y21i"]
 [ext_resource type="PackedScene" uid="uid://8j7mi5ykpjpp" path="res://Components/divider.tscn" id="2_kbf0p"]
 [ext_resource type="Script" uid="uid://kreqmlvryatk" path="res://Views/walker_menu.gd" id="4_358r1"]
+[ext_resource type="PackedScene" uid="uid://ntfkdfgbt37h" path="res://Views/catch_minigame.tscn" id="5_nrolq"]
 
 [node name="WalkScreen" type="VBoxContainer" unique_id=401520637]
 anchors_preset = 15
@@ -93,14 +94,18 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 100
 text = "🎒"
 
-[node name="BtnReturn" type="Button" parent="." unique_id=607412438]
+[node name="BtnReturn" type="Button" parent="WalkerMenu" unique_id=607412438]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "RETURN FROM STROLL"
 
+[node name="CatchMinigame" parent="." unique_id=200643910 instance=ExtResource("5_nrolq")]
+visible = false
+layout_mode = 2
+
 [connection signal="pressed" from="Pedometer/BtnStep++" to="." method="_on_btn_step_pressed"]
 [connection signal="pressed" from="WalkerMenu/WalkerActions/BtnRadar" to="WalkerMenu" method="_on_btn_radar_pressed"]
 [connection signal="pressed" from="WalkerMenu/WalkerActions/BtnDowsing" to="WalkerMenu" method="_on_btn_dowsing_pressed"]
 [connection signal="pressed" from="WalkerMenu/WalkerActions/BtnFound" to="WalkerMenu" method="_on_btn_found_pressed"]
-[connection signal="pressed" from="BtnReturn" to="." method="_on_btn_return_pressed"]
+[connection signal="pressed" from="WalkerMenu/BtnReturn" to="." method="_on_btn_return_pressed"]

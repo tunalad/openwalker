@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://ntfkdfgbt37h"]
+
+[ext_resource type="Script" uid="uid://ddrp021gmlbva" path="res://Views/catch_minigame.gd" id="1_oxrwt"]
+[ext_resource type="PackedScene" uid="uid://8j7mi5ykpjpp" path="res://Components/divider.tscn" id="1_vxxwr"]
+
+[node name="CatchMinigame" type="VBoxContainer" unique_id=200643910]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+alignment = 1
+script = ExtResource("1_oxrwt")
+
+[node name="MinigameStats" type="HBoxContainer" parent="." unique_id=118094792]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="MonLeft" type="VBoxContainer" parent="MinigameStats" unique_id=1038137894]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="L_Pad" type="Label" parent="MinigameStats/MonLeft" unique_id=753727262]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="L_Name" type="Label" parent="MinigameStats/MonLeft" unique_id=231680095]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "opp"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="L_HP" type="Label" parent="MinigameStats/MonLeft" unique_id=372833225]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "4/4"
+horizontal_alignment = 1
+
+[node name="MonRight" type="VBoxContainer" parent="MinigameStats" unique_id=1708711295]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="L_HP" type="Label" parent="MinigameStats/MonRight" unique_id=941986305]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "4/4"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="L_Name" type="Label" parent="MinigameStats/MonRight" unique_id=589706363]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "mon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="L_Pad" type="Label" parent="MinigameStats/MonRight" unique_id=1612066166]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Divider" parent="." unique_id=1071070289 instance=ExtResource("1_vxxwr")]
+layout_mode = 2
+
+[node name="MinigameActions" type="HBoxContainer" parent="." unique_id=1392145186]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BtnAttack" type="Button" parent="MinigameActions" unique_id=932610880]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Attack"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MinigameActions" unique_id=559112110]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BtnCatch" type="Button" parent="MinigameActions/VBoxContainer" unique_id=1397311685]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Catch"
+
+[node name="BtnBack" type="Button" parent="MinigameActions/VBoxContainer" unique_id=319357104]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Run"
+
+[node name="BtnEvade" type="Button" parent="MinigameActions" unique_id=1325525135]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Evade"
+
+[connection signal="pressed" from="MinigameActions/VBoxContainer/BtnBack" to="." method="_on_btn_back_pressed"]
